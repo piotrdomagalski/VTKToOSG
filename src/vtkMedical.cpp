@@ -117,6 +117,8 @@ int main(int argc, char **argv)
 {
 	if (argc < 2) { 
 		cout << "Usage: " << argv[0] << " headsq/quarter" << endl;
+		cout << endl;
+		cout << "You need to have the headsq data folder from VTK Data." << endl;
 		return -1;
 	}
 
