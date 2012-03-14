@@ -11,23 +11,14 @@
 #include <osg/Geode>
 #include <osgViewer/Viewer>
 
-static vtkSmartPointer<vtkActor> getActor(void);
-
-int main(int argc, char **argv)
-{
-	osg::ArgumentParser arguments(&argc, argv);
-	osgViewer::Viewer viewer(arguments);
-
-	vtkSmartPointer<vtkActor> actor = getActor();
-	osg::ref_ptr<osg::Geode> geode = vtkActorToOSG(actor);
-
-	viewer.setSceneData(geode);
-
-	return viewer.run();
-}
-
 static vtkSmartPointer<vtkActor> getActor(void)
 {
+	// From VTK/Examples/DataManipulation/Cxx/Cube.cxx
+	//
+	// Copyright (c) Ken Martin, Will Schroeder, Bill Lorense
+	// All rights reserved.
+	// See Copyright.txt or http://www.kitware.com/Copyright.htm for details.
+
 	float x[8][3] = {{0,0,0}, {1,0,0}, {1,1,0}, {0,1,0}, {0,0,1}, {1,0,1}, {1,1,1}, {0,1,1}};
 	vtkIdType pts[6][4] = {{0,1,2,3}, {4,5,6,7}, {0,1,5,4}, {1,2,6,5}, {2,3,7,6}, {3,0,4,7}};
 
@@ -54,4 +45,17 @@ static vtkSmartPointer<vtkActor> getActor(void)
 	cubeActor->SetMapper(cubeMapper);
 
 	return cubeActor;
+}
+
+int main(int argc, char **argv)
+{
+	osg::ArgumentParser arguments(&argc, argv);
+	osgViewer::Viewer viewer(arguments);
+
+	vtkSmartPointer<vtkActor> actor = getActor();
+	osg::ref_ptr<osg::Geode> geode = vtkActorToOSG(actor);
+
+	viewer.setSceneData(geode);
+
+	return viewer.run();
 }

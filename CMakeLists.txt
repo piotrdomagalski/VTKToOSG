@@ -14,9 +14,7 @@ file(GLOB VTKACTORTOOSG vtkActorToOSG.?pp)
 add_library(vtkActorToOSG STATIC ${VTKACTORTOOSG})
 
 add_executable(vtkCube vtkCube.cpp)
-add_executable(vtkCubeModyfingData vtkCubeModyfingData.cpp)
-#add_executable(vtkMedical vtkMedical.cpp)
+add_executable(vtkMedical vtkMedical.cpp)
 
 target_link_libraries(vtkCube vtkActorToOSG vtkRendering ${OPENSCENEGRAPH_LIBRARIES})
-target_link_libraries(vtkCubeModyfingData vtkActorToOSG vtkRendering ${OPENSCENEGRAPH_LIBRARIES})
-#target_link_libraries(vtkMedical vtkActorToOSG vtkRendering ${OPENSCENEGRAPH_LIBRARIES})
+target_link_libraries(vtkMedical vtkActorToOSG vtkRendering ${OPENSCENEGRAPH_LIBRARIES})
