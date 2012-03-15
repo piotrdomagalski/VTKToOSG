@@ -6,9 +6,9 @@ find_package(VTK REQUIRED)
 
 SET(CMAKE_CXX_FLAGS "-Wall -Wno-deprecated")
 
-include_directories("${PROJECT_SOURCE_DIR}")
-include_directories("${VTK_INCLUDE_DIRS}")
-include_directories("${OPENSCENEGRAPH_INCLUDE_DIRS}")
+include_directories(${PROJECT_SOURCE_DIR})
+include_directories(${VTK_INCLUDE_DIRS})
+include_directories(${OPENSCENEGRAPH_INCLUDE_DIRS})
 
 file(GLOB VTKACTORTOOSG vtkActorToOSG.?pp)
 add_library(vtkActorToOSG STATIC ${VTKACTORTOOSG})
