@@ -4,7 +4,7 @@ project(vtkToOSG)
 find_package(OpenSceneGraph REQUIRED osg osgViewer)
 find_package(VTK REQUIRED)
 
-SET(CMAKE_CXX_FLAGS "-Wall -Wno-deprecated")
+set(CMAKE_CXX_FLAGS "-Wall -Wno-deprecated")
 
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(${VTK_INCLUDE_DIRS})
@@ -17,4 +17,4 @@ add_executable(vtkCube vtkCube.cpp)
 add_executable(vtkMedical vtkMedical.cpp)
 
 target_link_libraries(vtkCube vtkActorToOSG vtkRendering ${OPENSCENEGRAPH_LIBRARIES})
-target_link_libraries(vtkMedical vtkActorToOSG vtkRendering ${OPENSCENEGRAPH_LIBRARIES})
+target_link_libraries(vtkMedical vtkActorToOSG vtkRendering vtkIO ${OPENSCENEGRAPH_LIBRARIES})
