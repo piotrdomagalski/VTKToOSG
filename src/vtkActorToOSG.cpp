@@ -22,13 +22,14 @@
 
 static osg::ref_ptr<osg::Geometry> processPrimitive(vtkActor *actor, vtkCellArray *primArray, int primType, int verbose);
 
-osg::ref_ptr<osg::Geode> vtkActorToOSG(vtkActor *actor, osg::ref_ptr<osg::Geode> geode, int verbose) {
-
+osg::ref_ptr<osg::Geode> vtkActorToOSG(vtkActor *actor, osg::ref_ptr<osg::Geode> geode, int verbose)
+{
 	// make actor current
 	actor->GetMapper()->Update();
 
 	// this could possibly be any type of DataSet, vtkActorToOSG assumes polyData
-	if (strcmp(actor->GetMapper()->GetInput()->GetClassName(), "vtkPolyData")) {
+	if (strcmp(actor->GetMapper()->GetInput()->GetClassName(), "vtkPolyData"))
+	{
 		std::cerr << "ERROR! Actor must use a vtkPolyDataMapper." << std::endl;
 		std::cerr << "If you are using a vtkDataSetMapper, use vtkGeometryFilter instead." << std::endl;
 		return NULL;
@@ -65,8 +66,8 @@ osg::ref_ptr<osg::Geode> vtkActorToOSG(vtkActor *actor, osg::ref_ptr<osg::Geode>
 	return geode;
 }
 
-static osg::ref_ptr<osg::Geometry> processPrimitive(vtkActor *actor, vtkCellArray *primArray, int primType, int verbose) {
-
+static osg::ref_ptr<osg::Geometry> processPrimitive(vtkActor *actor, vtkCellArray *primArray, int primType, int verbose)
+{
 	// get polyData from vtkActor
 	vtkPolyData *polyData = (vtkPolyData *) actor->GetMapper()->GetInput();
 

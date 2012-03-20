@@ -16,7 +16,8 @@
 #include <osg/Geode>
 #include <osgViewer/Viewer>
 
-struct medActors {
+struct medActors
+{
 	vtkSmartPointer<vtkActor> skin;
 	vtkSmartPointer<vtkActor> bone;
 	vtkSmartPointer<vtkActor> outline;
@@ -115,10 +116,11 @@ static medActors getActor(const char *path)
 
 int main(int argc, char **argv)
 {
-	if (argc < 2) {
-		cout << "Usage: " << argv[0] << " headsq/quarter" << endl;
-		cout << endl;
-		cout << "You need to have the headsq data folder from VTK Data." << endl;
+	if (argc < 2)
+	{
+		cerr << "Usage: " << argv[0] << " headsq/quarter" << endl;
+		cerr << endl;
+		cerr << "You need to have the headsq data folder from VTK Data." << endl;
 		return -1;
 	}
 
