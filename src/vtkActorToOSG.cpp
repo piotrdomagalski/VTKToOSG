@@ -72,7 +72,7 @@ static osg::ref_ptr<osg::Geometry> processPrimitive(vtkActor *actor, vtkCellArra
 
 	int numPrimitives = primArray->GetNumberOfCells();
 
-	if (numPrimitives == 0) 
+	if (numPrimitives == 0)
 		return NULL;
 
 	// initialize the Geometry
@@ -131,7 +131,7 @@ static osg::ref_ptr<osg::Geometry> processPrimitive(vtkActor *actor, vtkCellArra
 
 	// go through cells (primitives)
 	for (primArray->InitTraversal(); primArray->GetNextCell(npts, pts); prim++)
-	{ 
+	{
 		geom->addPrimitiveSet(new osg::DrawArrays(primType, totpts, npts));
 		totpts += npts;
 
@@ -142,7 +142,7 @@ static osg::ref_ptr<osg::Geometry> processPrimitive(vtkActor *actor, vtkCellArra
 			colors->push_back(osg::Vec4(aColor[0] / 255.0f, aColor[1] / 255.0f, aColor[2] / 255.0f, aColor[3] / 255.0f));
 
 			if (aColor[3] / 255.0f < 1)
-				transparentFlag = 1; 
+				transparentFlag = 1;
 		}
 
 		if (normalPerCell)
@@ -165,13 +165,13 @@ static osg::ref_ptr<osg::Geometry> processPrimitive(vtkActor *actor, vtkCellArra
 			}
 
 			if (colorPerVertex)
-			{ 
+			{
 				unsigned char *aColor = colorArray->GetPointer(4 * pts[i]);
 
 				colors->push_back(osg::Vec4(aColor[0] / 255.0f, aColor[1] / 255.0f, aColor[2] / 255.0f, aColor[3] / 255.0f));
 
 				if (aColor[3] / 255.0f < 1)
-					transparentFlag = 1; 
+					transparentFlag = 1;
 			}
 
 			if (texCoords != NULL)
@@ -200,7 +200,7 @@ static osg::ref_ptr<osg::Geometry> processPrimitive(vtkActor *actor, vtkCellArra
 	else if (colorPerCell)
 		geom->setColorBinding(osg::Geometry::BIND_PER_PRIMITIVE);
 	else
-	{ 
+	{
 		// use overall color (get from Actor)
 		double *actorColor = actor->GetProperty()->GetColor();
 		double opacity = actor->GetProperty()->GetOpacity();
@@ -208,7 +208,7 @@ static osg::ref_ptr<osg::Geometry> processPrimitive(vtkActor *actor, vtkCellArra
 		colors->push_back(osg::Vec4(actorColor[0], actorColor[1], actorColor[2], opacity));
 		geom->setColorBinding(osg::Geometry::BIND_OVERALL);
 	}
-  
+
 	if (texCoords != NULL)
 		geom->setTexCoordArray(0, tcoords.get());
 
@@ -225,12 +225,12 @@ static osg::ref_ptr<osg::Geometry> processPrimitive(vtkActor *actor, vtkCellArra
 	}
 
 	// wireframe
-	if (actor->GetProperty()->GetRepresentation() == VTK_WIREFRAME) 
+	if (actor->GetProperty()->GetRepresentation() == VTK_WIREFRAME)
 	{
 		osg::ref_ptr<osg::LineWidth> lineWidth = new osg::LineWidth;
 		lineWidth->setWidth(actor->GetProperty()->GetLineWidth());
 		stateset->setAttributeAndModes(lineWidth.get(), osg::StateAttribute::ON);
-	} 
+	}
 
 	// backface culling
 	if (!actor->GetProperty()->GetBackfaceCulling())
