@@ -21,8 +21,8 @@ The project depends on some external libraries. I tested it with:
 * CMake 2.8.7
 
 Please beware that `CMakeLists.txt` does not check for particular versions of
-those (apart from CMake) so in case of some older versions the compilation
-might fail with magical errors.
+(apart from CMake) so in case of some older versions the compilation might fail
+with magical errors.
 
 Compilation
 ===========
