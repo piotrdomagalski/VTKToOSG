@@ -28,7 +28,7 @@ target_link_libraries(VTKMedical VTKActorToOSG vtkRendering vtkIO ${OPENSCENEGRA
 if (Boost_FOUND AND PYTHONLIBS_FOUND)
 	include_directories(${Boost_INCLUDE_DIRS} ${PYTHON_INCLUDE_DIRS})
 	add_executable(VTKPython VTKPython.cpp)
-	target_link_libraries(VKTPython VTKActorToOSG vtkRendering vtkPythonCore ${OPENSCENEGRAPH_LIBRARIES} ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})
+	target_link_libraries(VTKPython VTKActorToOSG vtkRendering vtkPythonCore ${OPENSCENEGRAPH_LIBRARIES} ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})
 else()
 	message(WARNING "Boost and/or Python libraries were not found. VTKPython example will not be built.")
 endif()
