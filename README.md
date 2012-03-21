@@ -12,7 +12,7 @@ and visualize it in OSG viewer (VTKPython).
 Dependencies
 ============
 
-The project depends on some external libraries. I tested it with:
+The project depends on some external libraries. It was tested with:
 
 * VTK 5.8
 * OpenSceneGraph 3.0.1
@@ -21,8 +21,8 @@ The project depends on some external libraries. I tested it with:
 * CMake 2.8.7
 
 Please beware that `CMakeLists.txt` does not check for particular versions of
-(apart from CMake) so in case of some older versions the compilation might fail
-with magical errors.
+these libraries/tools (apart from CMake) so in case of some older versions the
+compilation might fail with magical errors.
 
 Compilation
 ===========
