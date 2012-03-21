@@ -116,16 +116,13 @@ static medActors getActor(const char *path)
 
 int main(int argc, char **argv)
 {
-	if (argc < 2)
+	if (argc != 2)
 	{
-		cerr << "Usage: " << argv[0] << " headsq/quarter" << endl;
-		cerr << endl;
-		cerr << "You need to have the headsq data folder from VTK Data." << endl;
+		cerr << "Usage: " << argv[0] << " <path to headsq/quarter>" << endl;
 		return -1;
 	}
 
-	osg::ArgumentParser arguments(&argc, argv);
-	osgViewer::Viewer viewer(arguments);
+	osgViewer::Viewer viewer;
 
 	medActors actors = getActor(argv[1]);
 

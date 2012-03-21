@@ -49,8 +49,7 @@ static vtkSmartPointer<vtkActor> getActor(void)
 
 int main(int argc, char **argv)
 {
-	osg::ArgumentParser arguments(&argc, argv);
-	osgViewer::Viewer viewer(arguments);
+	osgViewer::Viewer viewer;
 
 	vtkSmartPointer<vtkActor> actor = getActor();
 	osg::ref_ptr<osg::Geode> geode = vtkActorToOSG(actor);
