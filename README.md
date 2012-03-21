@@ -5,9 +5,9 @@ VTKToOSG is a simple project that demonstrates the usage of [vtkActorToOSG
 class](http://archive.ncsa.illinois.edu/prajlich/vtkActorToPF/) created by
 Michael Gronager.
 
-Besides simple integration on C++ level (`VTKCube` and `VTKMedical`), it also
+Besides simple integration on C++ level (VTKCube and VTKMedical), it also
 contains an example of how one might extract VTK actor constructed in Python
-and visualize it in OSG viewer (`VTKPython`).
+and visualize it in OSG viewer (VTKPython).
 
 Dependencies
 ============
