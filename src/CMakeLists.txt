@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(vtkToOSG)
+project(VTKToOSG)
 
 set(CMAKE_CXX_FLAGS "-Wall -Wno-deprecated")
 
@@ -16,19 +16,19 @@ include_directories(${PROJECT_SOURCE_DIR})
 include_directories(${VTK_INCLUDE_DIRS})
 include_directories(${OPENSCENEGRAPH_INCLUDE_DIRS})
 
-file(GLOB VTKACTORTOOSG vtkActorToOSG.?pp)
-add_library(vtkActorToOSG STATIC ${VTKACTORTOOSG})
+file(GLOB VTKACTORTOOSG VTKActorToOSG.?pp)
+add_library(VTKActorToOSG STATIC ${VTKACTORTOOSG})
 
-add_executable(vtkCube vtkCube.cpp)
-target_link_libraries(vtkCube vtkActorToOSG vtkRendering ${OPENSCENEGRAPH_LIBRARIES})
+add_executable(VTKCube VTKCube.cpp)
+target_link_libraries(VTKCube VTKActorToOSG vtkRendering ${OPENSCENEGRAPH_LIBRARIES})
 
-add_executable(vtkMedical vtkMedical.cpp)
-target_link_libraries(vtkMedical vtkActorToOSG vtkRendering vtkIO ${OPENSCENEGRAPH_LIBRARIES})
+add_executable(VTKMedical VTKMedical.cpp)
+target_link_libraries(VTKMedical VTKActorToOSG vtkRendering vtkIO ${OPENSCENEGRAPH_LIBRARIES})
 
 if (Boost_FOUND AND PYTHONLIBS_FOUND)
 	include_directories(${Boost_INCLUDE_DIRS} ${PYTHON_INCLUDE_DIRS})
-	add_executable(vtkPython vtkPython.cpp)
-	target_link_libraries(vtkPython vtkActorToOSG vtkRendering vtkPythonCore ${OPENSCENEGRAPH_LIBRARIES} ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})
+	add_executable(VTKPython VTKPython.cpp)
+	target_link_libraries(VKTPython VTKActorToOSG vtkRendering vtkPythonCore ${OPENSCENEGRAPH_LIBRARIES} ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})
 else()
-	message(WARNING "Boost and/or Python libraries were not found. vtkPython example will not be built.")
+	message(WARNING "Boost and/or Python libraries were not found. VTKPython example will not be built.")
 endif()

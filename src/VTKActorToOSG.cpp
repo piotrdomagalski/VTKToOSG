@@ -18,16 +18,16 @@
 #include <osg/LineWidth>
 #include <osg/Vec3>
 
-#include <vtkActorToOSG.hpp>
+#include <VTKActorToOSG.hpp>
 
 static osg::ref_ptr<osg::Geometry> processPrimitive(vtkActor *actor, vtkCellArray *primArray, int primType, int verbose);
 
-osg::ref_ptr<osg::Geode> vtkActorToOSG(vtkActor *actor, osg::ref_ptr<osg::Geode> geode, int verbose)
+osg::ref_ptr<osg::Geode> VTKActorToOSG(vtkActor *actor, osg::ref_ptr<osg::Geode> geode, int verbose)
 {
 	// make actor current
 	actor->GetMapper()->Update();
 
-	// this could possibly be any type of DataSet, vtkActorToOSG assumes polyData
+	// this could possibly be any type of DataSet, VTKActorToOSG assumes polyData
 	if (strcmp(actor->GetMapper()->GetInput()->GetClassName(), "vtkPolyData"))
 	{
 		std::cerr << "ERROR! Actor must use a vtkPolyDataMapper." << std::endl;

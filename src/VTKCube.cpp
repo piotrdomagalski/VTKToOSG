@@ -6,7 +6,7 @@
 #include <vtkPolyDataNormals.h>
 #include <vtkSmartPointer.h>
 
-#include <vtkActorToOSG.hpp>
+#include <VTKActorToOSG.hpp>
 
 #include <osg/Geode>
 #include <osgViewer/Viewer>
@@ -52,7 +52,7 @@ int main(int argc, char **argv)
 	osgViewer::Viewer viewer;
 
 	vtkSmartPointer<vtkActor> actor = getActor();
-	osg::ref_ptr<osg::Geode> geode = vtkActorToOSG(actor);
+	osg::ref_ptr<osg::Geode> geode = VTKActorToOSG(actor);
 
 	viewer.setSceneData(geode);
 

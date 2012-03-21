@@ -11,7 +11,7 @@
 #include <vtkStripper.h>
 #include <vtkVolume16Reader.h>
 
-#include <vtkActorToOSG.hpp>
+#include <VTKActorToOSG.hpp>
 
 #include <osg/Geode>
 #include <osgViewer/Viewer>
@@ -127,9 +127,9 @@ int main(int argc, char **argv)
 	medActors actors = getActor(argv[1]);
 
 	osg::ref_ptr<osg::Group> group = new osg::Group;
-	group->addChild(vtkActorToOSG(actors.skin));
-	group->addChild(vtkActorToOSG(actors.bone));
-	group->addChild(vtkActorToOSG(actors.outline));
+	group->addChild(VTKActorToOSG(actors.skin));
+	group->addChild(VTKActorToOSG(actors.bone));
+	group->addChild(VTKActorToOSG(actors.outline));
 
 	viewer.setSceneData(group);
 

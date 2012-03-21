@@ -1,7 +1,7 @@
 #include <vtkActor.h>
 #include <vtkObjectBase.h>
 
-#include <vtkActorToOSG.hpp>
+#include <VTKActorToOSG.hpp>
 
 #include <boost/python.hpp>
 #include <PyVTKObject.h>
@@ -80,7 +80,7 @@ int main(int argc, char **argv)
 	osg::ref_ptr<osg::Group> group = new osg::Group;
 
 	for (int i = 0; i < py::len(actors); i++)
-		group->addChild(vtkActorToOSG(py::extract<vtkActor *>(actors[i])));
+		group->addChild(VTKActorToOSG(py::extract<vtkActor *>(actors[i])));
 
 	viewer.setSceneData(group);
 

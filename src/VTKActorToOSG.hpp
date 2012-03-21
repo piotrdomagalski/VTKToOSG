@@ -11,6 +11,6 @@
 
 #include <vtkActor.h>
 
-osg::ref_ptr<osg::Geode> vtkActorToOSG(vtkActor *actor, osg::ref_ptr<osg::Geode> geode = NULL, int verbose = 0);
+osg::ref_ptr<osg::Geode> VTKActorToOSG(vtkActor *actor, osg::ref_ptr<osg::Geode> geode = NULL, int verbose = 0);
 
 #endif
