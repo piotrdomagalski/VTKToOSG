@@ -3,7 +3,7 @@
 # This example reads a volume dataset, extracts two isosurfaces that
 # represent the skin and bone, and then displays them.
 #
-# Slightly modified to be used as an example for vtkToOSG.
+# Slightly modified to be used as an example for VTKToOSG.
 
 import vtk
 import sys

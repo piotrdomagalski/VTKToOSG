@@ -1,5 +1,5 @@
-What is it?
-===========
+VTKToOSG
+========
 
 VTKToOSG is a simple project that demonstrates the usage of [vtkActorToOSG
 class](http://archive.ncsa.illinois.edu/prajlich/vtkActorToPF/) created by
@@ -10,7 +10,7 @@ contains an example of how one might extract VTK actor constructed in Python
 and visualize it in OSG viewer (VTKPython).
 
 Dependencies
-============
+------------
 
 The project depends on some external libraries. It was tested with:
 
@@ -25,7 +25,7 @@ these libraries/tools (apart from CMake) so in case of some older versions the
 compilation might fail with magical errors.
 
 Compilation
-===========
+-----------
 
 Thanks to CMake the compilation should be extremely simple:
 
@@ -34,7 +34,7 @@ Thanks to CMake the compilation should be extremely simple:
 3. `cmake ../src && make`
 
 Running the examples
-====================
+--------------------
 
 * `./VTKCube`
 * `./VTKMedical ../data/headsq/quarter`

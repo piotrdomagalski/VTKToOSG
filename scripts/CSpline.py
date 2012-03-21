@@ -3,7 +3,7 @@
 # This example demonstrates the use of vtkCardinalSpline.
 # It creates random points and connects them with a spline.
 #
-# Slightly modified to be used as an example for vtkToOSG.
+# Slightly modified to be used as an example for VTKToOSG.
 
 import vtk
 from vtk.util.colors import tomato, banana
