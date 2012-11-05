@@ -21,13 +21,13 @@ The project depends on some external libraries. It was tested with:
 * CMake 2.8.7
 
 Please beware that `CMakeLists.txt` does not check for particular versions of
-these libraries/tools (apart from CMake) so in case of some older versions the
+these libraries/tools (apart from CMake), so in case of some older versions the
 compilation might fail with magical errors.
 
 Compilation
 -----------
 
-Thanks to CMake the compilation should be extremely simple:
+Thanks to CMake, the compilation should be extremely simple:
 
 1. `cd VTKToOSG`
 2. `mkdir build && cd build`
